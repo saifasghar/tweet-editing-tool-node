@@ -89,8 +89,9 @@ app.get('/fetch-tweet/:id', async (req, res) => {
     }
 });
 app.get('/', async (req, res) => {
-
-    res.json({ tweet: 'yes working' }); // Assuming your tweet data is stored under the 'tweet' field
+    const tweetId = '64e66c979d29d1735a66b8ff';
+    const tweet = await Tweet.findById(tweetId);
+    res.json({ tweet: tweet }); // Assuming your tweet data is stored under the 'tweet' field
 });
 
 app.listen(3000, () => {
