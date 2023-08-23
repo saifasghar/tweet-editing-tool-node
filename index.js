@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -36,7 +37,7 @@ app.options('*', (req, res) => {
     res.sendStatus(200);
 });
 
-const dbUrl = 'mongodb+srv://mixture030030:LbWt4b2FKbyNyme7@cluster0.hhx3g5d.mongodb.net/extension?retryWrites=true&w=majority';
+const dbUrl = process.env.MONGODB_URI;
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
