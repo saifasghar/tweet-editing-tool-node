@@ -36,7 +36,7 @@ app.options('*', (req, res) => {
     res.sendStatus(200);
 });
 
-const dbUrl = 'mongodb://localhost:27017/extension';
+const dbUrl = 'mongodb+srv://mixture030030:LbWt4b2FKbyNyme7@cluster0.hhx3g5d.mongodb.net/extension?retryWrites=true&w=majority';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
