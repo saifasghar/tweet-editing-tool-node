@@ -41,7 +41,7 @@ const dbUrl = 'mongodb+srv://mixture030030:LbWt4b2FKbyNyme7@cluster0.hhx3g5d.mon
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    connectTimeoutMS: 5000, // 5 seconds
+    // connectTimeoutMS: 5000, // 5 seconds
 })
     .then(() => {
         console.log('Connected to MongoDB');
