@@ -63,10 +63,10 @@ app.post('/save-post', async (req, res) => {
         const savedPost = await newTweet.save();
 
         // Respond with the _id of the saved document
-        res.send({ tweetId: savedPost._id });
+        res.json({ tweetId: savedPost._id });
     } catch (error) {
         console.error('Error saving post:', error);
-        res.status(500).send({ error: 'An error occurred while saving the post' });
+        res.status(500).json({ error: 'An error occurred while saving the post' });
     }
 });
 
@@ -78,14 +78,14 @@ app.get('/fetch-tweet/:id', async (req, res) => {
         const tweet = await Tweet.findById(tweetId);
 
         if (!tweet) {
-            return res.status(404).send({ error: 'tweet not found' });
+            return res.status(404).json({ error: 'tweet not found' });
         }
 
         // Respond with the fetched tweet data
-        res.send({ tweet: tweet.tweet }); // Assuming your tweet data is stored under the 'tweet' field
+        res.json({ tweet: tweet.tweet }); // Assuming your tweet data is stored under the 'tweet' field
     } catch (error) {
         console.error('Error fetching tweet:', error);
-        res.status(500).send({ error: 'An error occurred while fetching the tweet' });
+        res.status(500).json({ error: 'An error occurred while fetching the tweet' });
     }
 });
 
