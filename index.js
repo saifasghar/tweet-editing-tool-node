@@ -88,6 +88,10 @@ app.get('/fetch-tweet/:id', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while fetching the tweet' });
     }
 });
+app.get('/', async (req, res) => {
+
+    res.json({ tweet: 'yes working' }); // Assuming your tweet data is stored under the 'tweet' field
+});
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
